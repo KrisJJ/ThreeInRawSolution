@@ -1,6 +1,7 @@
 ﻿using System;
 using SFML.Window;
 using SFML.Graphics;
+using SFML.System;
 using System.Collections.Generic;
 
 namespace ThreeInRaw
@@ -13,6 +14,7 @@ namespace ThreeInRaw
         private Cell curCell;
         private int[] curTab;
         private Summary summary;
+        private Timer timer;
 
         public Table(int m, int n)
         {
@@ -26,6 +28,7 @@ namespace ThreeInRaw
                 }
             }
             summary = new Summary();
+            timer = new Timer();
         }
 
         public Cell[][] GetTable()
@@ -43,6 +46,7 @@ namespace ThreeInRaw
                 }
             }
             this.summary.Draw(window);
+            this.timer.Draw(window);
         }
 
         public void MousePressed(RenderWindow window)
