@@ -11,16 +11,20 @@ namespace ThreeInRaw
         private int[] pos;
         private Text text;
         private Font font;
+        private double maxTime = new double();
+        private double residTime = new double();
 
         public Timer()
         {
             this.clock = new Clock();
-            this.pos = new int[2] { 470, 20 };
+            this.pos = new int[2] { 470, 30 };
             this.font = new Font("..\\..\\..\\resource\\Gabriola.ttf");
             this.text = new Text("", font);
             this.text.CharacterSize = 40;
             this.text.FillColor = new Color(0, 0, 0);
             this.text.Position = new SFML.System.Vector2f(pos[0], pos[1]);
+            this.maxTime = 10;
+            this.residTime = this.maxTime;
         }
 
         public Time GetTime()
@@ -30,11 +34,16 @@ namespace ThreeInRaw
 
         public void Draw(RenderWindow window)
         {
-            double curTime = new double();
-            curTime = Math.Ceiling(60 - this.clock.ElapsedTime.AsSeconds());
-            if (curTime <= 0) { curTime = 0; }
-            this.text.DisplayedString = "Оставшееся время: " + curTime;
+            this.residTime = Math.Ceiling(this.maxTime - this.clock.ElapsedTime.AsSeconds());
+            if (this.residTime <= 0) { this.residTime = 0; }
+            this.text.DisplayedString = "Оставшееся время: " + this.residTime;
             window.Draw(this.text);
+        }
+
+        public bool IsOver()
+        {
+            if (this.residTime > 0) { return false; }
+            else { return true; }
         }
     }
 }

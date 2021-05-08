@@ -14,7 +14,7 @@ namespace ThreeInRaw
         public Summary()
         {
             this.points = 0;
-            this.pos = new int[2] {470,70};
+            this.pos = new int[2] {470,80};
             this.font = new Font("..\\..\\..\\resource\\Gabriola.ttf");
             this.text = new Text("",font);
             this.text.CharacterSize = 40;
@@ -31,6 +31,11 @@ namespace ThreeInRaw
         public void UpdatePoints(int points)
         {
             this.points += points;
+        }
+
+        public int GetPoints()
+        {
+            return this.points;
         }
     }
 }

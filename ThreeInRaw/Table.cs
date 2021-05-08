@@ -31,11 +31,6 @@ namespace ThreeInRaw
             timer = new Timer();
         }
 
-        public Cell[][] GetTable()
-        {
-            return table;
-        }
-
         public void Draw(RenderWindow window)
         {
             foreach (Cell[] cell in this.table)
@@ -275,6 +270,16 @@ namespace ThreeInRaw
                 }
             }
             return existing;
+        }
+
+        public bool TimeIsOver()
+        {
+            return this.timer.IsOver();
+        }
+
+        public int GetPoints()
+        {
+            return this.summary.GetPoints();
         }
     }
 }
