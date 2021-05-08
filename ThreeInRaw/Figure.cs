@@ -14,7 +14,6 @@ namespace ThreeInRaw
         enum colors
         {
             red,
-            orange,
             yellow,
             green,
             blue,
@@ -25,14 +24,11 @@ namespace ThreeInRaw
             this.pos = pos;
             this.shape = new CircleShape(20);
 
-            var col = (colors)(new Random()).Next(6);
+            var col = (colors)(new Random()).Next(5);
             switch (col)
             {
                 case colors.red:
                     this.color = new Color(250, 0, 0);
-                    break;
-                case colors.orange:
-                    this.color = new Color(200, 100, 0);
                     break;
                 case colors.yellow:
                     this.color = new Color(200, 200, 0);

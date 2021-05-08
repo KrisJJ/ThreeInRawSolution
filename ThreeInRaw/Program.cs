@@ -8,7 +8,7 @@ namespace ThreeInRaw
     class Program
     {
         static RenderWindow window;
-        static Table table = new Table(10, 10);
+        static Table table = new Table(8, 8);
 
         static void Main(string[] args)
         {
@@ -27,9 +27,11 @@ namespace ThreeInRaw
 
                 table.DeleteTriplets();
 
+                while (table.VoidExists()) { table.FillVoid(); }
+
                 table.Draw(window);
 
-                //_1.main();
+                //_1.main(window);
 
                 window.Display();
             }
