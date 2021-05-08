@@ -201,7 +201,7 @@ namespace ThreeInRaw
                             if (!del.Contains(new int[2] {i+k-1, j}))
                             {
                                 del.Add(new int[2] { i+k-1, j });
-                                points += 50;
+                                if (this.timer.GetTime().AsSeconds() >= 1) { points += 50; }
                             }
                         }
                     }
@@ -220,7 +220,7 @@ namespace ThreeInRaw
                             if (!del.Contains(new int[2] { i, j+k-1 }))
                             {
                                 del.Add(new int[2] { i, j+k-1 });
-                                points += 50;
+                                if (this.timer.GetTime().AsSeconds() >= 1) { points += 50; }
                             }
                         }
                     }

@@ -34,13 +34,13 @@ namespace ThreeInRaw
                     this.color = new Color(200, 200, 0);
                     break;
                 case colors.green:
-                    this.color = new Color(0, 250, 0);
+                    this.color = new Color(0, 200, 0);
                     break;
                 case colors.blue:
                     this.color = new Color(0, 0, 250);
                     break;
                 case colors.violet:
-                    this.color = new Color(200, 0, 200);
+                    this.color = new Color(200, 0, 150);
                     break;
                 default:
                     this.color = new Color(0, 0, 0);

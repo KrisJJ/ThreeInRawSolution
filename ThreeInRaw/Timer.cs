@@ -23,7 +23,7 @@ namespace ThreeInRaw
             this.text.CharacterSize = 40;
             this.text.FillColor = new Color(0, 0, 0);
             this.text.Position = new SFML.System.Vector2f(pos[0], pos[1]);
-            this.maxTime = 10;
+            this.maxTime = 60;
             this.residTime = this.maxTime;
         }
 
@@ -36,7 +36,7 @@ namespace ThreeInRaw
         {
             this.residTime = Math.Ceiling(this.maxTime - this.clock.ElapsedTime.AsSeconds());
             if (this.residTime <= 0) { this.residTime = 0; }
-            this.text.DisplayedString = "Оставшееся время: " + this.residTime;
+            this.text.DisplayedString = "Rest time: " + this.residTime;
             window.Draw(this.text);
         }
 

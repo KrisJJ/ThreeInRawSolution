@@ -24,7 +24,7 @@ namespace ThreeInRaw
 
         public void Draw(RenderWindow window)
         {
-            this.text.DisplayedString = "Очки: "+points.ToString();
+            this.text.DisplayedString = "Points: "+points;
             window.Draw(this.text);
         }
 
